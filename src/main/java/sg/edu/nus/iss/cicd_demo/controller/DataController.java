@@ -48,4 +48,9 @@ public class DataController {
         }
         return currencies;
     }
+
+    @GetMapping("/sonarCloud")
+    public String sonarCloud() {
+        return "sonarCloud test commit";
+    }
 }
