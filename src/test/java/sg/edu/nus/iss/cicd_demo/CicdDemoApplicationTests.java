@@ -16,7 +16,7 @@ class CicdDemoApplicationTests {
 
 	@Test
 	void health() {
-		assertEquals("HEALTH CHECK OK test!", dataController.healthCheck());
+		assertEquals("HEALTH CHECK OK test! 15/09/2024", dataController.healthCheck());
 	}
 	@Test
 	void version() {

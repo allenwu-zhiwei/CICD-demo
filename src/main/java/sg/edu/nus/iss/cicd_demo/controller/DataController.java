@@ -11,7 +11,7 @@ public class DataController {
 
     @GetMapping("/")
     public String healthCheck() {
-        return "HEALTH CHECK OK test!";
+        return "HEALTH CHECK OK test! 15/09/2024";
     }
 
     @GetMapping("/version")
