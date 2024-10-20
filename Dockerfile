@@ -1,15 +1,11 @@
-#
-# Build stage
-#
-FROM maven:3.3.0-jdk-1717-slim AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
+# Use a base image that includes JDK
+FROM openjdk:17-jdk-slim
 
-#
-# Package stage
-#
-FROM openjdk:17-jre-slim
-COPY --from=build /home/app/target/cicd-demo-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the built JAR file into the container
+COPY target/cicd-demo-0.0.1-SNAPSHOT.jar app.jar
+
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "cicd-demo-0.0.1-SNAPSHOT.jar"]
