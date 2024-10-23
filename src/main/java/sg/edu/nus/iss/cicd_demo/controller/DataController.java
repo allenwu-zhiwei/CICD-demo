@@ -16,6 +16,7 @@ public class DataController {
 
     @GetMapping("/version")
     public String version() {
+        System.out.println("The actual version is 1.0.0");
         return "The actual version is 1.0.0";
     }
 
