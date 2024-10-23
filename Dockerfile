@@ -8,4 +8,4 @@ WORKDIR /app
 COPY target/cicd-demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Run the JAR file
-ENTRYPOINT ["java", "-jar", "cicd-demo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
