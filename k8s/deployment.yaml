@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cicd-demo
-          image: alllenwu249/ass-repo/cicd-demo:latest
+          image: alllenwu249/cicd-demo:latest
           ports:
             - containerPort: 8080
           resources:
